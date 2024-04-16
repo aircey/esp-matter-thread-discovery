@@ -11,3 +11,7 @@ Just so you know, this project is **still ongoing**. You might find some things 
 ## Available pages
 
 - [Bootstrap Zephyr RTOS on M5Stack Core2 from MacOS](./m5stack-core2-zephyr-101/)
+
+## Available code sample
+
+- [M5Stack Core2 + Zephyr: Blink](https://github.com/romaincolombo/esp-matter-thread-discovery/tree/main/code/m5stack_core2_zephyr_blink/)
