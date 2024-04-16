@@ -159,3 +159,44 @@ Showcase of LVGL User interface.
 west build --pristine -b m5stack_core2/esp32/procpu samples/modules/lvgl/demos -- -DCONFIG_LV_Z_DEMO_WIDGETS=y
 west flash
 ```
+
+### SHT3XD (Temperature/Humidity) using Env III sensor
+
+**This demo requires to connect a [M5Stack Env III Sensor](https://docs.m5stack.com/en/unit/envIII) on Port A (Grove connector).**
+
+<https://github.com/zephyrproject-rtos/zephyr/blob/main/samples/sensor/sht3xd/>
+
+This sample application periodically (2 Hz) measures the ambient temperature and humidity. The result is written to the console.
+
+You first need to create a device overlay file for the M5Stack Core2 in order to:
+
+- Turn on the 5V regulator on the MBus (off by default)
+- Enable the Grove I2C bus (disabled by default)
+- Declare the SHT3XD sensor on this I2C bus on address x44
+
+```bash
+touch ~/zephyrproject/zephyr/samples/sensor/sht3xd/boards/m5stack_core2.overlay
+```
+
+Edit the `m5stack_core2.overlay` file to add the following content:
+
+```text
+&bus_5v {
+	regulator-boot-on;
+};
+
+&grove_i2c {
+	status = "okay";
+	sht3xd@44 {
+		compatible = "sensirion,sht3xd";
+		reg = <0x44>;
+	};
+};
+```
+You can now build and flash this sample, including the custom overlay:
+
+```bash
+west build --pristine -b m5stack_core2/esp32/procpu samples/sensor/sht3xd -- -DDTC_OVERLAY_FILE=boards/m5stack_core2.overlay
+west flash
+west espressif monitor
+```
