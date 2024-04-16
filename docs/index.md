@@ -11,6 +11,7 @@ Just so you know, this project is **still ongoing**. You might find some things 
 ## Available pages
 
 - [Bootstrap Zephyr RTOS on M5Stack Core2 from MacOS](./m5stack-core2-zephyr-101/)
+- [Enabling Zephyr Shell](./zephyr-shell/)
 
 ## Available code sample
 
