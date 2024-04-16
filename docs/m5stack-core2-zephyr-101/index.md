@@ -124,6 +124,18 @@ west flash
 west espressif monitor
 ```
 
+### Blinky
+
+<https://github.com/zephyrproject-rtos/zephyr/blob/main/samples/basic/blinky/>
+
+The Blinky sample blinks an LED forever using the GPIO API.
+
+```bash
+west build --pristine -b m5stack_core2/esp32/procpu samples/basic/blinky
+west flash
+west espressif monitor
+```
+
 ### MPU6050 motion tracking
 
 <https://github.com/zephyrproject-rtos/zephyr/tree/main/samples/sensor/mpu6050>
@@ -145,4 +157,5 @@ Showcase of LVGL User interface.
 
 ```bash
 west build --pristine -b m5stack_core2/esp32/procpu samples/modules/lvgl/demos -- -DCONFIG_LV_Z_DEMO_WIDGETS=y
+west flash
 ```
