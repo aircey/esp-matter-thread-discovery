@@ -1,0 +1,11 @@
+&bus_5v {
+	regulator-boot-on;
+};
+
+&grove_i2c {
+	status = "okay";
+	sht3xd@44 {
+		compatible = "sensirion,sht3xd";
+		reg = <0x44>;
+	};
+};
