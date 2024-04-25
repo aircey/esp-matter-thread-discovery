@@ -1,0 +1,5 @@
+name: input_areamap
+build:
+  cmake: .
+  settings:
+    dts_root: .

@@ -17,3 +17,5 @@ Just so you know, this project is **still ongoing**. You might find some things 
 
 - [M5Stack Core2 + Zephyr: Blink](https://github.com/romaincolombo/esp-matter-thread-discovery/tree/main/code/m5stack_core2_zephyr_blink/)
 - [M5Stack Core2 + Zephyr + Env III:  Console](https://github.com/romaincolombo/esp-matter-thread-discovery/tree/main/code/m5stack_core2_zephyr_env3_console/)
+- [Zephyr Module: input-areamap](https://github.com/romaincolombo/esp-matter-thread-discovery/tree/main/code/zephyr_input_areamap/)
+- [M5Stack Core2 + Zephyr + Board's buttons:  Demo with UI](https://github.com/romaincolombo/esp-matter-thread-discovery/tree/main/code/m5stack_core2_zephyr_board_buttons/)
