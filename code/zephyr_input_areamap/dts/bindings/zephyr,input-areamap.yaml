@@ -1,0 +1,41 @@
+description: |
+  Input area map pseudo-device
+
+  Listens for touches on a touch-sensitive device (e.g., capacitive touch panel)
+  and converts specified area events into key events.
+
+  - Converts press events on configured areas (x1,y1,x2,y2) to key events.
+  - Sends the corresponding key release event upon release.
+  - Sends a release event on swipe-out from a defined area.
+  - Ignores presses that start outside of any area (no swipe-in).
+
+  Example configuration:
+
+  #include <zephyr/dt-bindings/input/input-event-codes.h>
+
+  areamap {
+    input = <&touch_device>;
+    compatible = "zephyr,input-areamap";
+    areas = <240 10 280 120>, <240 130 280 200>, <240 230 280 310>;
+    codes = <INPUT_BTN_1>, <INPUT_BTN_2>, <INPUT_BTN_3>;
+  };
+
+compatible: "zephyr,input-areamap"
+
+properties:
+  input:
+    type: phandle
+    description: |
+      Input device phandle
+
+  areas:
+    type: array
+    required: true
+    description: |
+      Array of areas coordinates (x1,y1,x2,y2) the associated output-codes are mapped to.
+
+  codes:
+    type: array
+    required: true
+    description: |
+      Array of output event key codes (INPUT_KEY_* or INPUT_BTN_*).

@@ -1,0 +1,19 @@
+#include <dt-bindings/input/input-event-codes.h>
+
+/ {
+	buttons: buttons {
+		input = <&ft5336_touch>;
+		compatible = "zephyr,input-areamap";
+		areas = <240 10 280 120>, <240 130 280 200>, <240 230 280 310>;
+		codes = <INPUT_BTN_1>, <INPUT_BTN_2>, <INPUT_BTN_3>;
+	};
+
+	buttons_longpress: buttons_longpress {
+        input = <&buttons>;
+        compatible = "zephyr,input-longpress";
+        input-codes = <INPUT_BTN_1>, <INPUT_BTN_2>, <INPUT_BTN_3>;
+		short-codes = <INPUT_BTN_1>, <INPUT_BTN_2>, <INPUT_BTN_3>;
+        long-codes = <INPUT_BTN_4>, <INPUT_BTN_5>, <INPUT_BTN_6>;
+        long-delay-ms = <400>;
+	};
+};
