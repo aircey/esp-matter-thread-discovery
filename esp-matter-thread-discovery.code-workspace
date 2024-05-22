@@ -1,0 +1,41 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "code/m5stack_core2_zephyr_env3_ui"
+		}
+	],
+	"settings": {
+		// Hush CMake
+		"cmake.configureOnOpen": false,
+		// IntelliSense
+		"C_Cpp.default.compilerPath": "~/zephyr-sdk-0.16.5-1/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc",
+		// File Associations
+		"files.associations": {
+			"*.overlay": "dts",
+		},
+		// KConfig
+		"kconfig.zephyr.base": "~/zephyrproject/zephyr/",
+		"kconfig.zephyr.west": "~/zephyrproject/.venv/bin/west",
+		"kconfig.zephyr.board": {
+
+			"board": "m5stack_core2_esp32_procpu",
+			"arch": "espressif",
+			"dir": "/Users/r.colombo/zephyrproject/zephyr/boards/m5stack/m5stack_core2"
+		}
+	},
+	"extensions": {
+		"recommendations": [
+			"ms-vscode.cpptools",
+			"ms-vscode.cpptools-themes",
+			"twxs.cmake",
+			"plorefice.devicetree",
+			"ms-vscode.vscode-embedded-tools",
+			"trond-snekvik.kconfig-lang",
+			"ms-python.python",
+			"donjayamanne.python-environment-manager"
+		]
+	}
+}
